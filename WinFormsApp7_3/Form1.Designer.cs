@@ -28,12 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            label1 = new Label();
+            areaBox = new ComboBox();
+            weatherIcon = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)weatherIcon).BeginInit();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(90, 125);
+            label1.Name = "label1";
+            label1.Size = new Size(110, 20);
+            label1.TabIndex = 0;
+            label1.Text = "都道府県を選択";
+            // 
+            // areaBox
+            // 
+            areaBox.FormattingEnabled = true;
+            areaBox.Location = new Point(90, 148);
+            areaBox.Name = "areaBox";
+            areaBox.Size = new Size(167, 28);
+            areaBox.TabIndex = 1;
+            // 
+            // weatherIcon
+            // 
+            weatherIcon.Location = new Point(313, 148);
+            weatherIcon.Name = "weatherIcon";
+            weatherIcon.Size = new Size(209, 184);
+            weatherIcon.SizeMode = PictureBoxSizeMode.StretchImage;
+            weatherIcon.TabIndex = 2;
+            weatherIcon.TabStop = false;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(605, 394);
+            Controls.Add(weatherIcon);
+            Controls.Add(areaBox);
+            Controls.Add(label1);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)weatherIcon).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private ComboBox areaBox;
+        private PictureBox weatherIcon;
     }
 }
