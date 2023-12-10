@@ -6,5 +6,10 @@ namespace WinFormsApp7_3
         {
             InitializeComponent();
         }
+
+        private void CitySelected(object sender, EventArgs e)
+        {
+
+        }
     }
 }

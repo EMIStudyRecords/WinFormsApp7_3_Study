@@ -50,6 +50,7 @@
             areaBox.Name = "areaBox";
             areaBox.Size = new Size(167, 28);
             areaBox.TabIndex = 1;
+            areaBox.SelectedIndexChanged += CitySelected;
             // 
             // weatherIcon
             // 
