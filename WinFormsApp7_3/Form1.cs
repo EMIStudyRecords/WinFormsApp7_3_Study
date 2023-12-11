@@ -42,6 +42,16 @@ namespace WinFormsApp7_3
 
         private void CitySelected(object sender, EventArgs e)
         {
+            // 天気情報サービスにアクセスする（著者が作成したダミーの情報です）
+
+            string cityCode = cityNames[areaBox.Text];
+            string url =
+                "https://and-idea.sbcr.jp/sp/90261/weatherCheck.php?city=" +
+                cityCode;
+
+            HttpClient client = new HttpClient();
+            string result = client.GetStringAsync(url).Result;
+
 
         }
     }
