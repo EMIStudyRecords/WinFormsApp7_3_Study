@@ -1,9 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Net.Http;
+
+
 namespace WinFormsApp7_3
 {
     public partial class Form1 : Form
     {
 
-        //
+        // ƒƒ“ƒo•Ï”‚ÌéŒ¾
         Dictionary<string, string> cityNames;
 
         public Form1()
@@ -12,16 +24,16 @@ namespace WinFormsApp7_3
 
 
             // “s“¹•{Œ§‚Ì«‘‚ğì¬‚·‚é
-            this.cityNames = new Dictionary<string, string>();
+            var cityNames = new Dictionary<string, string>();
 
-            this.cityNames.Add("Ã‰ªŒ§", "‚P");
-            this.cityNames.Add("“Œ‹“s", "‚Q");
-            this.cityNames.Add("ç—tŒ§", "‚R");
-            this.cityNames.Add("L“‡Œ§", "‚S");
+            cityNames.Add("Ã‰ªŒ§", "‚P");
+            cityNames.Add("“Œ‹“s", "‚Q");
+            cityNames.Add("ç—tŒ§", "‚R");
+            cityNames.Add("L“‡Œ§", "‚S");
 
 
             // ƒRƒ“ƒ{ƒ{ƒbƒNƒX‚É“s“¹•{Œ§‚ğ•\¦‚³‚¹‚é
-            foreach (KeyValuePair<string,string> data in this.cityNames)
+            foreach (KeyValuePair<string,string> data in cityNames)
             {
                 areaBox.Items.Add(data.Key);
             }
