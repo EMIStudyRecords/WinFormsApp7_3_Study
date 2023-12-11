@@ -27,10 +27,10 @@ namespace WinFormsApp7_3
             // “s“¹•{Œ§‚Ì«‘‚ğì¬‚·‚é
             var cityNames = new Dictionary<string, string>();
 
-            cityNames.Add("Ã‰ªŒ§", "‚P");
-            cityNames.Add("“Œ‹“s", "‚Q");
-            cityNames.Add("ç—tŒ§", "‚R");
-            cityNames.Add("L“‡Œ§", "‚S");
+            cityNames.Add("Ã‰ªŒ§", "1");
+            cityNames.Add("“Œ‹“s", "2");
+            cityNames.Add("ç—tŒ§", "3");
+            cityNames.Add("L“‡Œ§", "4");
 
 
             // ƒRƒ“ƒ{ƒ{ƒbƒNƒX‚É“s“¹•{Œ§‚ğ•\¦‚³‚¹‚é
@@ -53,6 +53,12 @@ namespace WinFormsApp7_3
             HttpClient client = new HttpClient();
             string result = client.GetStringAsync(url).Result;
 
+
+            // “V‹Cî•ñ‚©‚çƒAƒCƒRƒ“‚ÌURL‚ğæ‚èo‚·
+
+            JObject jobj = JObject.Parse(result);
+            string todayWeatherIcon = (string)((jobj["url"] as JValue).Value);
+            weatherIcon.ImageLocation = todayWeatherIcon;
 
         }
     }
