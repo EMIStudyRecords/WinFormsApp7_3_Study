@@ -63,5 +63,10 @@ namespace WinFormsApp7_3
 
 
         }
+
+        private void ExitMenuClicked(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

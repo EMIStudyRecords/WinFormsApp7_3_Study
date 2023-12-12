@@ -31,7 +31,11 @@
             label1 = new Label();
             areaBox = new ComboBox();
             weatherIcon = new PictureBox();
+            menuStrip1 = new MenuStrip();
+            ファイルToolStripMenuItem = new ToolStripMenuItem();
+            終了ToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)weatherIcon).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -61,6 +65,30 @@
             weatherIcon.TabIndex = 2;
             weatherIcon.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ファイルToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(605, 28);
+            menuStrip1.TabIndex = 3;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // ファイルToolStripMenuItem
+            // 
+            ファイルToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { 終了ToolStripMenuItem });
+            ファイルToolStripMenuItem.Name = "ファイルToolStripMenuItem";
+            ファイルToolStripMenuItem.Size = new Size(65, 24);
+            ファイルToolStripMenuItem.Text = "ファイル";
+            // 
+            // 終了ToolStripMenuItem
+            // 
+            終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
+            終了ToolStripMenuItem.Size = new Size(224, 26);
+            終了ToolStripMenuItem.Text = "終了";
+            終了ToolStripMenuItem.Click += ExitMenuClicked;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -70,9 +98,13 @@
             Controls.Add(weatherIcon);
             Controls.Add(areaBox);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)weatherIcon).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -82,5 +114,8 @@
         private Label label1;
         private ComboBox areaBox;
         private PictureBox weatherIcon;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem ファイルToolStripMenuItem;
+        private ToolStripMenuItem 終了ToolStripMenuItem;
     }
 }
