@@ -54,7 +54,7 @@
             // 
             // weatherIcon
             // 
-            weatherIcon.Location = new Point(313, 148);
+            weatherIcon.Location = new Point(319, 148);
             weatherIcon.Name = "weatherIcon";
             weatherIcon.Size = new Size(209, 184);
             weatherIcon.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -65,6 +65,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(605, 394);
             Controls.Add(weatherIcon);
             Controls.Add(areaBox);

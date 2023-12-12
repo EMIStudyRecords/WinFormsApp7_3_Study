@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace WinFormsApp7_3
@@ -24,8 +25,7 @@ namespace WinFormsApp7_3
             InitializeComponent();
 
 
-            // 都道府県の辞書を作成する
-            var cityNames = new Dictionary<string, string>();
+            cityNames = new Dictionary<string, string>();
 
             cityNames.Add("静岡県", "1");
             cityNames.Add("東京都", "2");
@@ -34,21 +34,22 @@ namespace WinFormsApp7_3
 
 
             // コンボボックスに都道府県を表示させる
-            foreach (KeyValuePair<string,string> data in cityNames)
+            foreach (KeyValuePair<string, string> data in cityNames)
             {
                 areaBox.Items.Add(data.Key);
             }
-        }
 
+        }
 
         private void CitySelected(object sender, EventArgs e)
         {
             // 天気情報サービスにアクセスする（著者が作成したダミーの情報です）
 
+
             string cityCode = cityNames[areaBox.Text];
-            string url =
-                "https://and-idea.sbcr.jp/sp/90261/weatherCheck.php?city=" +
-                cityCode;
+
+            string url = "https://and-idea.sbcr.jp/sp/90261/weatherCheck.php?city=" +
+                          cityCode;
 
             HttpClient client = new HttpClient();
             string result = client.GetStringAsync(url).Result;
@@ -59,6 +60,7 @@ namespace WinFormsApp7_3
             JObject jobj = JObject.Parse(result);
             string todayWeatherIcon = (string)((jobj["url"] as JValue).Value);
             weatherIcon.ImageLocation = todayWeatherIcon;
+
 
         }
     }
